@@ -13,17 +13,22 @@ body {
   
   h1 {
     text-align: center;
+    margin-bottom: 50px;
   }
   
   form {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    outline: none;
+    border-radius: 5px;
+    background-color: #FFF;
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
   }
   
 input[type="checkbox"] {
-    -webkit-appearance: none;
+    /* -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none;
+    appearance: none; */
     width: 20px;
     height: 20px;
     border: 2px solid #ccc;
@@ -32,12 +37,15 @@ input[type="checkbox"] {
     cursor: pointer;
     margin-right: 10px;
     align-self: center;
+    accent-color: #c1d9e5 !important;
   }
 
   input[type="checkbox"]:checked {
-    background-color: #2ecc71;
-    border-color: #2ecc71;
+    /* background-color: #2ecc71 !important;
+    border-color: #2ecc71 !important; #8dd2aa*/
+    border-radius: 3px;
   }
+  
 
   input[type="text"] {
     flex-grow: 1;
@@ -45,6 +53,9 @@ input[type="checkbox"] {
     padding-right: 0;
     border-radius: 5px 0 0 5px;
     border: none;
+    outline: none;
+    background: none;
+    caret-color: #FFF;
   }
   
   button {
@@ -142,5 +153,17 @@ input[type="checkbox"] {
 .delete-button{
   color: #FF0000;
 }
+
+.add-button{
+  cursor: pointer;
+  position: relative;
+  color: #4CAF50;
+  text-align: center;
+  justify-content: center;
+  align-self: center;
+  right: 10px;
+  background-color: transparent;
+}
+
 
 
