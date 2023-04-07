@@ -26,14 +26,19 @@ function renderTodos() {
       }
     });
 
-    const editButton = document.createElement('button');
-    editButton.innerText = 'Edit';
+    const editButton = document.createElement('span');
+    editButton.className = 'material-symbols-outlined';
+    editButton.classList.add('edit-button');
+    editButton.innerText = 'edit';
     editButton.addEventListener('click', () => {
       editTodo(index);
     });
     
-    const deleteButton = document.createElement('button');
-    deleteButton.innerText = 'Delete';
+   
+    const deleteButton = document.createElement('span');
+    deleteButton.className = 'material-symbols-outlined';
+    deleteButton.classList.add('delete-button');
+    deleteButton.innerText = 'delete';
     deleteButton.addEventListener('click', () => {
       todos.splice(index, 1);
       checkboxStates.splice(index, 1);
@@ -88,17 +93,19 @@ function editTodo(index) {
   editInput.focus();
 
   // Hide Edit and Delete buttons
-  const editButton = todoList.childNodes[index].querySelector('button:nth-of-type(1)');
-  const deleteButton = todoList.childNodes[index].querySelector('button:nth-of-type(2)');
+  const editButton = todoList.childNodes[index].querySelector('span:nth-of-type(1)');
+  const deleteButton = todoList.childNodes[index].querySelector('span:nth-of-type(2)');
   editButton.style.display = 'none';
   deleteButton.style.display = 'none';
 
   // Show Save and Cancel buttons
-  const saveButton = document.createElement('button');
-  saveButton.textContent = 'Save';
+  const saveButton = document.createElement('span');
+  saveButton.textContent = 'save_as';
+  saveButton.className = 'material-symbols-outlined'
   saveButton.classList.add('save-button');
-  const cancelButton = document.createElement('button');
-  cancelButton.textContent = 'Cancel';
+  const cancelButton = document.createElement('span');
+  cancelButton.textContent = 'close';
+  cancelButton.className = 'material-symbols-outlined'
   cancelButton.classList.add('cancel-button');
   todoList.childNodes[index].appendChild(saveButton);
   todoList.childNodes[index].appendChild(cancelButton);
