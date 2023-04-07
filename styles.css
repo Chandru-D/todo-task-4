@@ -37,7 +37,7 @@ input[type="checkbox"] {
     cursor: pointer;
     margin-right: 10px;
     align-self: center;
-    accent-color: #c1d9e5 !important;
+    accent-color: #ffffff !important;
   }
 
   input[type="checkbox"]:checked {
@@ -47,7 +47,7 @@ input[type="checkbox"] {
   }
   
 
-  input[type="text"] {
+  input[type="text"]:not(.edit-input) {
     flex-grow: 1;
     padding: 10px;
     padding-right: 0;
@@ -102,15 +102,26 @@ input[type="checkbox"] {
   }
 
   .edit-input {
-    flex: 1;
+   
     padding: 0;
-    font-size: 16px;
-    /* border: 2px solid #6447a1;
-    border-radius: 5px;  */
+    margin: 0;
+    width: auto;
+    flex-grow: 1;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    outline: none;
+    /* background: none; */
+    font-size: inherit;
+  }
+
+  @media screen and (max-width:600px){
+    .edit-input{
+      width: 40%;
+    }
   }
 
   .edit-input:focus {
-    outline: none;
+    /* outline: none; */
     border-color: #8bd3dd;
     
   }
